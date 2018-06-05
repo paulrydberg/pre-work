@@ -1,0 +1,30 @@
+Initial visible errors when looking in browser:
+1. Format of page banner text needs to be fixed
+2. Instructions box needs to go away
+3. Sloppy or lack of outlining of </div> all over the place
+3. Font format appears different than should in "About" section
+4. Add spacing/format "About" section
+    A. Hyperlink syntax incorrect
+5. Image not loading to right of "About"
+    A. Syntax error missing "<"
+6. Layout of where each box at the bottom is placed is mixed up
+    A. Correct Order
+        1. Grow/Shrink
+            a. Buttons don't work
+                1. Image is .jpg May need to be .png to work
+                2. Image saved to dir and converted to .png
+                3. Filepath referencing IMG needs to rout to "Broken Code" local directory
+                4. Picture didn't load...odd
+                    A. Aha! either logic.js or style.css is broken
+                        1. Solution: Replace broken files
+        2. Random Grumpy Cat Fact //underneath Grow/Shrink
+            a. Buttom doesnt work
+            b. Replaced other files thing theres a snippet of code fetching grumpys info still
+                1. JavaScript file is a total mess...Scrapping broken code and replacing content
+        3. Color changer button// to the right of Grow/Shrink
+            a. Buttom doesnt work
+        4. List Of Grumpy Cat's Favorite Things // kiddie corner of Grow/Shrink
+            a. Need to seperate text into multiple lines "<p>" and format.
+
+Ideas to fix all the above:
+    1. Scrape cat site and replace content data from other site

@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<!-- saved from url=(0150)https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/screencastify-record-save-to-your-google-drive-and-share-your-video.html -->
+<html lang="en" class="gr__the-coding-bootcamp_gitbooks_io"><script async="" src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/analytics.js.download"></script><script src="chrome-extension://nefadabeoagfkgmkgegmjgdhegbllple/page/prompt.js"></script><script src="chrome-extension://nefadabeoagfkgmkgegmjgdhegbllple/page/runScript.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        
+        <title>Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="The Coding Bootcamp">
+        
+        
+    
+    <link rel="stylesheet" href="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/website(1).css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/website(2).css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    
+    
+    
+    
+
+    <style id="ace_editor.css">.ace_editor {position: relative;overflow: hidden;font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;direction: ltr;}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;cursor: text;}.ace_content {position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;min-width: 100%;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");}.ace_scrollbar {position: absolute;right: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-v{overflow-x: hidden;overflow-y: scroll;top: 0;}.ace_scrollbar-h {overflow-x: scroll;overflow-y: hidden;left: 0;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;text-indent: -1em;-ms-user-select: text;-moz-user-select: text;-webkit-user-select: text;user-select: text;white-space: pre!important;}.ace_text-input.ace_composition {background: inherit;color: inherit;z-index: 1000;opacity: 1;text-indent: 0;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;word-wrap: normal;white-space: pre;height: 100%;width: 100%;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;}.ace_text-layer {font: inherit !important;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;border-left: 2px solid;transform: translatez(0);}.ace_slim-cursors .ace_cursor {border-left-width: 1px;}.ace_overwrite-cursors .ace_cursor {border-left-width: 0;border-bottom: 1px solid;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_smooth-blinking .ace_cursor {-webkit-transition: opacity 0.18s;transition: opacity 0.18s;}.ace_editor.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}.ace_line .ace_fold {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");}.ace_tooltip {background-color: #FFF;background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.1));background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;max-width: 100%;padding: 3px 4px;position: fixed;z-index: 999999;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;cursor: default;white-space: pre;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;pointer-events: none;}.ace_folding-enabled > .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");}.ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {-webkit-transition: opacity 0.4s ease 0.05s;transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {-webkit-transition: opacity 0.05s ease 0.05s;transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}.ace_br1 {border-top-left-radius    : 3px;}.ace_br2 {border-top-right-radius   : 3px;}.ace_br3 {border-top-left-radius    : 3px; border-top-right-radius:    3px;}.ace_br4 {border-bottom-right-radius: 3px;}.ace_br5 {border-top-left-radius    : 3px; border-bottom-right-radius: 3px;}.ace_br6 {border-top-right-radius   : 3px; border-bottom-right-radius: 3px;}.ace_br7 {border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px;}.ace_br8 {border-bottom-left-radius : 3px;}.ace_br9 {border-top-left-radius    : 3px; border-bottom-left-radius:  3px;}.ace_br10{border-top-right-radius   : 3px; border-bottom-left-radius:  3px;}.ace_br11{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-left-radius:  3px;}.ace_br12{border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br13{border-top-left-radius    : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br14{border-top-right-radius   : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br15{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;}
+/*# sourceURL=ace/css/ace_editor.css */</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;color: black;}.ace-tm .ace_cursor {color: black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-tm */</style><style>    .error_widget_wrapper {        background: inherit;        color: inherit;        border:none    }    .error_widget {        border-top: solid 2px;        border-bottom: solid 2px;        margin: 5px 0;        padding: 10px 40px;        white-space: pre-wrap;    }    .error_widget.ace_error, .error_widget_arrow.ace_error{        border-color: #ff5a5a    }    .error_widget.ace_warning, .error_widget_arrow.ace_warning{        border-color: #F1D817    }    .error_widget.ace_info, .error_widget_arrow.ace_info{        border-color: #5a5a5a    }    .error_widget.ace_ok, .error_widget_arrow.ace_ok{        border-color: #5aaa5a    }    .error_widget_arrow {        position: absolute;        border: solid 5px;        border-top-color: transparent!important;        border-right-color: transparent!important;        border-left-color: transparent!important;        top: -5px;    }</style><link rel="prev" href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/chapter5.html"><link rel="next" href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/assignment5_mac.html"></head>
+    <body data-gr-c-s-loaded="true">
+        
+<div class="book without-animation with-summary font-size-2 font-family-1 is-loading">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://legacy.gitbook.com/book/the-coding-bootcamp/pre-work-book" target="_blank" class="custom-link">Web-Dev-Pre-Work-GitBook</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter expanded" data-level="1.1" data-path="./">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter expanded" data-level="1.2" data-path="chapter1.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/chapter1.html">
+            
+                    
+                    Module #1 - Prepare for Pre-Work!
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter expanded" data-level="1.3" data-path="chapter2.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/chapter2.html">
+            
+                    
+                    Module #2 - So You Wanna Be A Developer...
+            
+                <i class="exc-trigger fa"></i></a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter expanded" data-level="1.3.1" data-path="assignment2.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/assignment2.html">
+            
+                    
+                    Assignment #2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter expanded" data-level="1.4" data-path="chapter3.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/chapter3.html">
+            
+                    
+                    Module #3 - Get Your Mind Right
+            
+                <i class="exc-trigger fa"></i></a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter expanded" data-level="1.4.1" data-path="assignment3.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/assignment3.html">
+            
+                    
+                    Assignment #3
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter expanded" data-level="1.5" data-path="chapter4.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/chapter4.html">
+            
+                    
+                    Module #4 - Type Like a Tiger
+            
+                <i class="exc-trigger fa"></i></a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter expanded" data-level="1.5.1" data-path="assignment4.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/assignment4.html">
+            
+                    
+                    Assignment #4
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter expanded" data-level="1.6" data-path="chapter5.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/chapter5.html">
+            
+                    
+                    Module #5 - Machine Ready
+            
+                <i class="exc-trigger fa"></i></a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active expanded" data-level="1.6.1" data-path="assignment5_win.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/assignment5_win.html">
+            
+                    
+                    Assignment #5 (Win)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="assignment5_mac.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/assignment5_mac.html">
+            
+                    
+                    Assignment #5 (Mac)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="assignment5_mac/screencastify-record-save-to-your-google-drive-and-share-your-video.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/assignment5_mac/screencastify-record-save-to-your-google-drive-and-share-your-video.html">
+            
+                    
+                    Screencastify - Record, Save to your Google Drive and Share your video
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter6.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/chapter6.html">
+            
+                    
+                    Module #6 - Sort of Code with Pseudocode
+            
+                <i class="exc-trigger fa"></i></a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="assignment6.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/assignment6.html">
+            
+                    
+                    Assignment #6
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="chapter7.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/chapter7.html">
+            
+                    
+                    Module #7 - Where's the $@#*'ing Error?
+            
+                <i class="exc-trigger fa"></i></a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="assignment7.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/assignment7.html">
+            
+                    
+                    Assignment #7
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="chapter8.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/chapter8.html">
+            
+                    
+                    Module #8 - HTML Hotness
+            
+                <i class="exc-trigger fa"></i></a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="assignment8.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/assignment8.html">
+            
+                    
+                    Assignment #8
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="chapter9.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/chapter9.html">
+            
+                    
+                    Module #9 - See Me CSS
+            
+                <i class="exc-trigger fa"></i></a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="assignment9.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/assignment9.html">
+            
+                    
+                    Assignment #9
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="module-11-cozy-up-to-your-new-career.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/module-11-cozy-up-to-your-new-career.html">
+            
+                    
+                    Module #11 - Time to get Employable!
+            
+                <i class="exc-trigger fa"></i></a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="module-11-cozy-up-to-your-new-career/connect-professional-dots.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/module-11-cozy-up-to-your-new-career/connect-professional-dots.html">
+            
+                    
+                    Assignment #11
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="chapter10.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/chapter10.html">
+            
+                    
+                    Module #10 - Jiggle into JavaScript
+            
+                <i class="exc-trigger fa"></i></a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="assignment10.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/assignment10.html">
+            
+                    
+                    Assignment #10
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="chapter11.html">
+            
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/chapter11.html">
+            
+                    
+                    Module #12 - What Next?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com/" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <a class="btn pull-left js-toolbar-action" aria-label="" href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/screencastify-record-save-to-your-google-drive-and-share-your-video.html#"><i class="fa fa-align-justify"></i></a><div class="dropdown pull-left font-settings js-toolbar-action"><a class="btn toggle-dropdown" aria-label="Font Settings" href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/screencastify-record-save-to-your-google-drive-and-share-your-video.html#"><i class="fa fa-font"></i></a><div class="dropdown-menu dropdown-right"><div class="dropdown-caret"><span class="caret-outer"></span><span class="caret-inner"></span></div><div class="buttons"><button class="button size-2 font-reduce">A</button><button class="button size-2 font-enlarge">A</button></div><div class="buttons"><button class="button size-2 ">Serif</button><button class="button size-2 ">Sans</button></div><div class="buttons"><button class="button size-3 ">White</button><button class="button size-3 ">Sepia</button><button class="button size-3 ">Night</button></div></div></div><h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/">Assignment #5 (Win)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="assignment-5---get-yo-tools-installed-windows">Assignment #5 - Get Yo' Tools Installed (Windows)</h1>
+<hr>
+<h2 id="overview">Overview</h2>
+<p>In this assignment, you will be installing all of the required tools and software necessary for the class. We've got a lot to install, so buckle in and get ready!</p>
+<h2 id="before-you-begin">Before You Begin</h2>
+<p>Make sure you sign up for these services; you'll need all of them throughout the course.</p>
+<ul>
+<li>LinkedIn: <a href="https://www.linkedin.com/" target="_blank">https://www.linkedin.com</a></li>
+<li>GitHub: <a href="https://github.com/" target="_blank">https://github.com</a></li>
+<li>StackOverflow: <a href="http://stackoverflow.com/" target="_blank">http://stackoverflow.com</a></li>
+</ul>
+<p>Don't just create logins. Job recruiters often scour these sites in search of job candidates; make sure you provide your headshot and your contact info on all three services.</p>
+<p>P.S. Don’t forget to outline your skills and your work experience on LinkedIn.</p>
+<!-- Also, make sure to accept the invite for your section on [Slack](https://slack.com/) as well. If you haven't received an email from us yet with the section's domain name, contact your Student Success Manager to assist you. You should receive an invite 2 weeks prior to class start.-->
+<p>Also, make sure to accept the invite for your section on <a href="https://slack.com/" target="_blank">Slack</a> as well. You will receive the link to your class-specific channel during orientation. </p>
+<h2 id="da-big-installation-enchilada">Da Big Installation Enchilada</h2>
+<p>The rest of this assignment will walk you through the specific steps associated with installing each of the tools you'll need. Follow the instructions closely!</p>
+<h3 id="google-chrome">Google Chrome</h3>
+<p>During this course, consider Chrome <em>the</em> web browser; it comes loaded with tools for quickly editing the web pages you’ll create.</p>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-16.png" alt=""></p>
+<ol>
+<li>If you don’t already have Chrome installed, visit their <a href="https://www.google.com/chrome/browser/desktop/" target="_blank">download page</a>. </li>
+<li>Download, open, and run through Chrome’s installation file.</li>
+</ol>
+<h3 id="screencastify">Screencastify</h3>
+<p>There are two places where you can install the Screencastify extension:</p>
+<ol>
+<li>The <a href="https://www.screencastify.com/" target="_blank">Screencastify Website</a>.</li>
+<li>The <a href="https://chrome.google.com/webstore/detail/screencastify-screen-vide/mmeijimgabbpbgpdklnllpncmdofkcpn" target="_blank">Chrome Web Store</a>.</li>
+</ol>
+<p><em>Note: You must be using Google Chrome to install and use Screencastify</em></p>
+<h4 id="install-screencastify-from-their-website">Install Screencastify from their Website:</h4>
+<ul>
+<li>Go to the <a href="https://www.screencastify.com/" target="_blank">homepage</a> and click the blue "<strong>Free 1-Click Install</strong>" button. You'll see a confirmation box confirming that you want to install the extension. Click "<strong>Add extension</strong>". Screencastify will then begin downloading.</li>
+</ul>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Screencastify-1.gif" alt=""></p>
+<h4 id="install-screencastify-from-the-chrome-web-store">Install Screencastify from the Chrome Web Store:</h4>
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/screencastify-screen-vide/mmeijimgabbpbgpdklnllpncmdofkcpn" target="_blank">Click here</a> to view their listing in the Chrome Web Store, then click "<strong>Add to Chrome</strong>". You'll see a confirmation box confirming that you want to install the extension. Click "<strong>Add extension</strong>". Screencastify will then begin downloading.</li>
+</ul>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Screencastify-2.gif" alt=""></p>
+<ul>
+<li>Once Screencastify is finished recording, their grey film strip icon will appear in the top right-hand corner of your browser. Click the icon to get started.</li>
+</ul>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Screencastify-6.gif" alt=""></p>
+<h4 id="set-up-your-webcam-and-microphone">Set up your webcam and microphone:</h4>
+<p>The first time you click on the Screencastify extension icon, you'll be asked to give Screencastify permission to access your webcam and microphone. They ask for these permissions so that you're able to narrate over your recordings and embed / record your webcam.</p>
+<p><em>Note: While you're required to allow access to your camera and microphone in order for Screencastify to function properly, you don't need to include audio or webcam video in your recordings. Screencastify never records audio or video unless you expressly ask it to.</em></p>
+<ul>
+<li>When you click on the grey film strip icon, you'll be taken to a page where you can allow camera and microphone access. </li>
+<li>Click the "<strong>Setup Camera Access</strong>" button. Chrome will confirm once more that you'd like to allow microphone and camera access. Click "<strong>allow</strong>".</li>
+</ul>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Screencastify-3.gif" alt=""></p>
+<ul>
+<li>And that's it! From now on, you'll be able to narrate over your recordings and record your webcam whenever you'd like.</li>
+</ul>
+<p><em>Troubleshooting: If Screencastify is unable to detect your microphone, <a href="https://help.screencastify.com/article/206-i-dont-hear-any-audio-from-my-microphone" target="_blank">click here</a>. If it's unable to detect your webcam, <a href="https://help.screencastify.com/article/205-my-webcam-is-not-detected" target="_blank">click here</a>.</em></p>
+<h4 id="connect-your-google-drive-to-screencastify">Connect your Google Drive to Screencastify:</h4>
+<p>When you connect your Google Drive to Screencastify, all of your recordings will automatically save to your Google Drive in a folder titled " Screencastify". Google Drive, along with many other useful apps come free with a Google Account. If you don't already have one, go create one!</p>
+<p>Depending on how long a particular recording is, this process could take a few minutes to complete after you end a recording.</p>
+<p><em>Note: Screencastify highly recommends connecting your Google Drive to Screencastify and saving all of your recordings there vs. locally on your computer. It's much safer.</em></p>
+<p>The first time you open the Screencastify extension, you'll be asked where you want to store your recordings (right after you allow camera and microphone access). </p>
+<ul>
+<li>Make sure that "<strong>Google Drive</strong>" is selected, then click "<strong>Next</strong>". You'll then need to sign in with your Google account and allow Screencastify permission to access your Google Drive. You can sign in with <strong>any</strong> Google-based account, not just a @gmail.com email.</li>
+</ul>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Screencastify-4.gif" alt=""></p>
+<p>Now, all of your videos will automatically save to your Drive after you finish recording. </p>
+<p>As soon as you finish your first recording, a new " Screencastify" folder will be created in your Drive. All of your recordings will be saved in this folder.</p>
+<p>The videos you will see in Your Recordings library in Screencastify are synced with this "Screencastify" folder in your Drive. This means:</p>
+<ul>
+<li>If you delete a video in Screencastify, it will also be deleted from your Drive</li>
+<li>If you move a video out of the "Screencastify" folder in your Drive, it will no longer be accessible from Your Recordings in Screencastify</li>
+<li>If you rename a video in Screencastify, it will also be renamed in your Drive</li>
+</ul>
+<p><em>Note: Screencastify never views, modifies, stores, or in any way interacts with the other files in your Google Drive.</em></p>
+<p>You can always change the default storage location for your recordings, even after initial setup. Simply open the extension menu and click "<strong>Options</strong>". The first thing you'll see is an option to select where you want to store your recordings.</p>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Screencastify-5.gif" alt=""></p>
+<h5 id="important-resource-want-to-know-how-to-record-save-to-your-google-drive-and-share-your-recordings-check-it-out-here">Important Resource: Want to know how to record, save to your Google Drive and share your recordings? Check it out <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/assignment5_mac/screencastify-record-save-to-your-google-drive-and-share-your-video.html">here</a>!</h5>
+<h3 id="slack">Slack</h3>
+<p>You’ll be messaging your instructor, your TAs, and your fellow classmates with this business-centric chatting app. The teaching and career staff will post some of their most important announcements here so set this program up as soon as you can. You will receive the link to your class-specific channel during orientation.</p>
+<ol>
+<li><p><strong>If you don’t have the Slack app yet,</strong> go to <a href="https://slack.com/downloads" target="_blank">https://slack.com/downloads</a>. Select "Windows" to download the installation file, and then open the program.</p>
+<p> <img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-18.png" alt=""></p>
+</li>
+<li><p><strong>If you already use the Slack app,</strong> you just need to add our channel to your application. </p>
+<ul>
+<li><p>Click the header of your current Slack Channel.</p>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-20.png" alt=""></p>
+</li>
+<li><p>Then select “Sign in to another team …”</p>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-22.png" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>As you run through the guide, make sure you do the following:</p>
+<ul>
+<li><p>Enter in the domain we gave you for Slack.</p>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-24.png" alt=""></p>
+</li>
+<li><p>Enter in the email with which we invited you, as well as your password, when prompted.</p>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-7.png" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>When you see the chatroom, you’re finished.</p>
+</li>
+</ol>
+<h3 id="visual-studio-code">Visual Studio Code</h3>
+<p>This text editor features a variety of indispensable tools and customizable components that will help you code your websites and apps.</p>
+<ol>
+<li>Download the appropriate version for your operating system.
+<img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/VSCode_2.png" alt=""></li>
+<li>Once the download is complete, open and run the installer file.
+<img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/VSCode_3.png" alt="">
+<img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/VSCode_4.png" alt=""></li>
+<li>Go through the prompts presented in the installer. When you reach the following screen, select the following settings.</li>
+</ol>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/VSCode_5.png" alt=""></p>
+<p>Note: Once the installation is complete, you should be able to access Visual Studio Code from your start menu.</p>
+<h3 id="install-open-in-browser-extension">Install "Open in Browser" Extension</h3>
+<p>With this extension, you can open HTML files in your web browser from the Visual Studio Code editor.</p>
+<ol>
+<li>Open Visual Studio Code.</li>
+<li>Open the extensions pane and search for "Open in Browser".</li>
+<li>Select the version written by "TechER" and install.
+<img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/VSCode_6.png" alt=""></li>
+</ol>
+<h3 id="git--git-bash">Git &amp; Git Bash</h3>
+<p>Coders depend on this tool for version control; the process of logging the development of programs and applications. This comes in handy during collaborative programming, when teams of programmers change, add, and remove code throughout a project’s directory; this process would be chaotic without Git. </p>
+<p>The installation also includes Git Bash, or Bash for short. You'll be using this command line terminal throughout the course and during the rest of these instructions.</p>
+<ol>
+<li><p>Go to Git download page: <a href="https://git-scm.com/downloads" target="_blank">https://git-scm.com/downloads</a>. Click on the download for your computer.</p>
+<p> <img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-9.png" alt=""></p>
+</li>
+<li><p>Run through the installation file. Make sure you check off the right boxes as shown in these four images.</p>
+<ul>
+<li><p>Save Git to the desktop (this should save Git Bash to your desktop too).</p>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-13.png" alt=""></p>
+</li>
+<li><p>Use Git from the Windows Command Prompt.</p>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-12.png" alt=""></p>
+</li>
+<li><p>Checkout as-is.</p>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-15.png" alt=""></p>
+</li>
+<li><p>Use Windows' default console window.</p>
+<p>  <img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-42.png" alt=""></p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="heroku-toolbelt">Heroku Toolbelt</h3>
+<p>This tool lets developers deploy their web apps to the cloud, allowing anyone with the right addresses to access their creations. </p>
+<ol>
+<li><p>First, you need to sign up for a free Heroku account: <a href="https://signup.heroku.com/" target="_blank">https://signup.heroku.com/</a>.</p>
+</li>
+<li><p>Go to <a href="https://toolbelt.heroku.com/" target="_blank">https://toolbelt.heroku.com</a>. Download the installer.</p>
+</li>
+<li><p>Go through the install guide. Then open Command Prompt on your computer (not Bash). </p>
+<ul>
+<li>Command Prompt, or cmd.exe, comes preloaded on Windows operating systems, but it will be located in different locations, depending on your version of Windows. Use your OS's search feature for Command Prompt, and it should pop up shortly.</li>
+</ul>
+</li>
+<li><p>Type <code>heroku</code> into the command line, and then press <kbd>enter</kbd>. If <code>heroku</code> doesn't work for you, type <code>heroku login</code> instead. When prompted, enter the credentials from your Heroku account, and then close Command Prompt.</p>
+</li>
+</ol>
+<h3 id="nodejs">Node.js</h3>
+<p>This runtime environment has quickly become the standard for coding back-end programs. Your code will run on Node throughout most of the course.</p>
+<ol>
+<li><p>Go to the Node.js site: <a href="https://nodejs.org/en" target="_blank">https://nodejs.org/en</a>. Click the download button and run through the installation file.</p>
+<p> <img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-19.png" alt=""></p>
+</li>
+</ol>
+<!-- 
+### MySQL
+This database management system allows developers to create incredibly dynamic web applications for a variety of purposes&mdash;user-specific content, data analytics, so on and so forth.
+
+1. Go to MySQL for Windows: https://dev.mysql.com/downloads/installer/. Click the button in this image to download MySQL’s installer.
+
+    ![20-MySQL](win/20-MySQL.jpg)
+
+2.    Open and run through the installer, making sure you follow these images:
+
+    *    Server only.
+
+        ![21-ServerOnly](win/21-ServerOnly.jpg)
+
+    * Click "Execute" here.
+
+        ![22-Execute](win/22-Execute.jpg)
+
+    * Set your root password. Store it somewhere safe too; you'll need it later in the course.
+
+        ![23-Root](win/23-Root.jpg)
+
+### MySQL Workbench
+Developers use this MySQL GUI client to see their databases in a human-readable form. This sort of tool simplifies abstract concepts by providing developers with a *graphical user interface*, or GUI for short (pronounced *gooey*, by the way).
+
+1. Make sure you’ve installed MySQL before setting up the MySQL Workbench.
+
+2. Go to the MySQL Workbench site: https://dev.mysql.com/downloads/workbench.
+
+3. Scroll down and select the 64-bit Windows version of the software. Download it and run through the installer. 
+
+-->
+<h3 id="mamp">MAMP</h3>
+<p>This tool lets developers run local servers for their back-end-reliant web apps. In other words, you can power some of your more complex sites without an internet connection. </p>
+<ol>
+<li><p>Go to <a href="https://www.mamp.info/en/downloads/" target="_blank">https://www.mamp.info/en/downloads/</a>. Select Windows and click download.</p>
+<p> <img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-21.png" alt=""></p>
+</li>
+<li><p>Run through the installer.</p>
+<ul>
+<li>When prompted, make sure you deselect MAMP PRO; that’s a paid service, and you won’t need it.</li>
+</ul>
+</li>
+</ol>
+<h3 id="ssh-key">SSH Key</h3>
+<p>Generating SSH keys allows developers to interface with certain remote services without having to constantly type out login information. You're going to set up an SSH key for GitHub. </p>
+<p>Without a key, you won’t be able to push your code to GitHub without entering a password each time; trust us, that would be as irritating as needing a key to open every door in your home.</p>
+<ol>
+<li><p>If you haven't signed up for a GitHub account yet, you'll need to do so before moving on with these steps. Visit <a href="https://github.com/" target="_blank">https://github.com</a>.</p>
+</li>
+<li><p>Open up Bash.</p>
+</li>
+<li><p>We need to set up SSH keys. First, let’s make sure you don’t already have a set of keys on your computer. Type this into your Bash window <strong>(copying and pasting will not work)</strong>: </p>
+<ul>
+<li><p><code>ls –al ~/.ssh</code></p>
+</li>
+<li><p>If no keys pop up, move onto step 4.</p>
+</li>
+<li><p>If keys do pop up, check that none of them are listed under <code>id_rsa</code>, like in this image:</p>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-43.png" alt=""></p>
+<ul>
+<li>If you do find a key with a matching name, then you can either overwrite it by following steps 4 to 6, or you can use the same key in steps 10 and beyond. Be advised that you'll have to remember the password tied to your key if you decide not to overwrite it. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Type in this command along with your email to generate your keys</p>
+<ul>
+<li><code>ssh-keygen –t rsa –b 4096 –C "YOURGITHUBEMAIL@PLACEHOLDER.NET"</code></li>
+</ul>
+</li>
+<li><p>When asked to enter a file to save the key, just hit <kbd>enter</kbd>. </p>
+<ul>
+<li><p>Also enter a passphrase for your key. </p>
+</li>
+<li><p>Note: You shouldn’t see any characters appear in the window while typing the password.</p>
+</li>
+</ul>
+</li>
+<li><p>When you’re finished, your window should look like this:</p>
+<p> <img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-6.png" alt=""></p>
+</li>
+<li><p>For the next step, we need to use a tool called ssh agent to link our key with our machine. Let’s test whether ssh-agent is working. Run this command in Bash: </p>
+<ul>
+<li><p><code>eval "$(ssh-agent –s)"</code></p>
+</li>
+<li><p>If your Bash window looks like the below image, move onto the next step.</p>
+<p>   <img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-8.png" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>Now run this command: </p>
+<ul>
+<li><code>ssh-add ~/.ssh/id_rsa</code></li>
+</ul>
+</li>
+<li><p>When prompted for a passphrase, enter the one associated with the key.</p>
+<ul>
+<li>If you’ve forgotten this password, just create a new one, starting with step 4.</li>
+</ul>
+</li>
+<li><p>We need to add the key to GitHub. Copy the key to your clipboard by entering this command: </p>
+<ul>
+<li><p><code>clip &lt; ~/.ssh/id_rsa.pub</code></p>
+</li>
+<li><p>You shouldn’t see any kind of message when you run this command. If you do, make sure you entered it correctly.</p>
+</li>
+<li><p>Do not copy anything else to your clipboard until you finish the next instructions. Otherwise, you’ll have to repeat this step again.</p>
+</li>
+</ul>
+</li>
+<li><p>Go to <a href="https://github.com/settings/ssh" target="_blank">https://github.com/settings/ssh</a>. Click the “New SSH Key” button.</p>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-11.png" alt=""></p>
+</li>
+<li><p>When the form pops up, enter a name for your computer in the Title input. In the Key input, paste the SSH key you copied in step 10.</p>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-14.png" alt=""></p>
+</li>
+<li><p>Now we just need to add GitHub to your computer’s list of acceptable SSH hosts. Go back to your Bash window. Type in this command: <code>ssh –T git@github.com</code></p>
+<ul>
+<li><p>You should see an RSA fingerprint in your window. Only enter “yes” if it matches the one highlighted in the image below.</p>
+<p>  <img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-10.png" alt="">            </p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="setting-your-git-username-for-every-repository-on-your-computer">Setting your Git username for <em>every</em> repository on your computer</h3>
+<p>Git uses a username to associate commits with an identity. The Git username is not the same as your GitHub username.</p>
+<p>You can change the name that is associated with your Git commits using the <code>git config</code> command. The new name you set will be visible in any future commits you push to GitHub from the command line. If you'd like to keep your real name private, you can use any text as your Git username.
+Changing the name associated with your Git commits using <code>git config</code> will only affect future commits and will not change the name used for past commits.</p>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-48.png" alt=""></p>
+<h3 id="setting-your-email-address-for-every-repository-on-your-computer">Setting your email address for <em>every</em> repository on your computer</h3>
+<p>GitHub uses the email address set in your local Git configuration to associate commits pushed from the command line with your GitHub account.</p>
+<p>You can use the <code>git config</code> command to change the email address you associate with your Git commits. The new email address you set will be visible in any future commits you push to GitHub from the command line. Any commits you made prior to changing your commit email address are still associated with your previous email address.</p>
+<p>For more information on commit email addresses, including your GitHub-provided <code>noreply</code> email address, see "<a href="https://help.github.com/articles/about-commit-email-addresses/" target="_blank">About commit email addresses</a>."</p>
+<p><img src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/Mod5-47.png" alt=""></p>
+<h2 id="amaze-balls">Amaze-Balls!</h2>
+<p>If you got through all the installations, give yourself a pat on the back! Installations are never fun, but just like taxes, ya gotta do them.</p>
+<p>Be sure to take a break before continuing with the rest of the pre-work. </p>
+<hr>
+<h4 id="copyright">Copyright</h4>
+<p>Coding Boot Camp © 2018. All Rights Reserved.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/chapter5.html" class="navigation navigation-prev " aria-label="Previous page: Module #5 - Machine Ready">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="https://the-coding-bootcamp.gitbooks.io/pre-work-book/content/assignment5_mac/assignment5_mac.html" class="navigation navigation-next " aria-label="Next page: Assignment #5 (Mac)" style="margin-right: 17px;">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Assignment #5 (Win)","level":"1.6.1","depth":2,"next":{"title":"Assignment #5 (Mac)","level":"1.6.2","depth":2,"path":"assignment5_mac.md","ref":"assignment5_mac.md","articles":[]},"previous":{"title":"Module #5 - Machine Ready","level":"1.6","depth":1,"path":"chapter5.md","ref":"chapter5.md","articles":[{"title":"Assignment #5 (Win)","level":"1.6.1","depth":2,"path":"assignment5_win.md","ref":"assignment5_win.md","articles":[]},{"title":"Assignment #5 (Mac)","level":"1.6.2","depth":2,"path":"assignment5_mac.md","ref":"assignment5_mac.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","collapsible-chapters","ace","ga",""],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-83364004-1"},"collapsible-chapters":{},"ace":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"github":"Trilogy-Education/Pre-Work-GitBook","theme":"default","author":"The Coding Bootcamp","pdf":{"pageNumbers":true,"fontSize":16,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web-Dev-Pre-Work-GitBook","language":"en","links":{"sidebar":{"Web-Dev-Pre-Work-GitBook":"https://legacy.gitbook.com/book/the-coding-bootcamp/pre-work-book"},"gitbook":true},"gitbook":"*","description":"Complete Web-Dev-Pre-Work Curriculum"},"file":{"path":"assignment5_win.md","mtime":"2018-04-20T13:14:14.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-20T13:21:38.606Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/gitbook.js.download"></script>
+    <script src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/theme.js.download"></script>
+    
+        
+        <script src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/collapsible-chapters.js.download"></script>
+        
+    
+        
+        <script src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/ace.js.download"></script>
+        
+    
+        
+        <script src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/ace.js(1).download"></script>
+        
+    
+        
+        <script src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/plugin.js.download"></script>
+        
+    
+        
+        <script src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/search-engine.js.download"></script>
+        
+    
+        
+        <script src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/search.js.download"></script>
+        
+    
+        
+        <script src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/lunr.min.js.download"></script>
+        
+    
+        
+        <script src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/search-lunr.js.download"></script>
+        
+    
+        
+        <script src="./Assignment #5 (Win) · Web-Dev-Pre-Work-GitBook_files/fontsettings.js.download"></script>
+        
+    
+
+    
+
+
+</body></html>

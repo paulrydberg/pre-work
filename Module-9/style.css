@@ -1,0 +1,63 @@
+    body {
+        background-color: white;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    h2, h3 {
+        font-size: 24px;
+    }
+
+    p, li {
+        font-size: 16px;
+    }
+
+    .red {
+        color: red;
+    }
+
+    .blue {
+        color: blue;
+    }
+
+    .green {
+        color: green;
+    }
+
+    .bigtext {
+        font-size: 24px;
+    }
+
+    .tinytext {
+        font-size: 12px;
+    }
+
+    .centertext {
+        text-align: center;
+    }
+
+    .boldtext {
+        font-weight: bold;
+    }
+
+    .changefont {
+        font-family: "Courier New", Courier, monospace;
+    }
+
+    .bigorangebold {
+        font-family: Impact, Charcoal, sans-serif;
+        color: orange;
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    .styledFont {
+        font-family: Arial, Helvetica, sans-serif;
+        color: green;
+    }
+
+    .styledImage { 
+        border: orange 10px solid; 
+    }
